@@ -338,3 +338,40 @@ docker-compose up -d
 4. Acesse o servidor web no navegador:
     - Apache: `http://localhost:8080`
     - Nginx: `http://localhost:8081`
+
+## Subindo a VM
+
+1. Certifique-se de que o Vagrant e o VirtualBox estão instalados.
+2. No diretório do projeto, execute o comando:
+    ```bash
+    vagrant up
+    ```
+
+3. A VM será provisionada e configurada automaticamente. Isso pode levar alguns minutos.
+
+## Iniciando os Containers
+
+1. Após a VM estar em execução, acesse-a via SSH:
+    ```bash
+    vagrant ssh
+    ```
+
+2. Navegue até o diretório do projeto:
+    ```bash
+    cd /srv/www
+    ```
+
+3. Inicie os containers usando Docker Compose:
+    ```bash
+    docker-compose up -d
+    ```
+
+4. Verifique se os containers estão em execução:
+    ```bash
+    docker ps
+    ```
+
+## Acessando os Serviços
+
+- Servidor Apache: `http://localhost:8080`
+- Servidor Nginx: `http://localhost:8081`

@@ -1,1 +1,1 @@
-{"virtualbox":{"/srv/www":{"exclude":[".vagrant/",".git/","node_modules/"],"guestpath":"/srv/www","hostpath":"C:/Users/Pc/Documents/Github/project","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/srv/www":{"exclude":[".vagrant/",".git/","node_modules/"],"guestpath":"/srv/www","hostpath":"C:/Users/Pc/Documents/Github/project","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Pc/Documents/Github/project","disabled":false,"__vagrantfile":true}}}
