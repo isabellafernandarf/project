@@ -11,13 +11,17 @@ sudo rm /etc/resolv.conf
 echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
 echo "nameserver 8.8.4.4" | sudo tee -a /etc/resolv.conf
 
+# Restart networking service to apply DNS changes
+sudo systemctl restart networking
+
 # Update package list
 sudo apt-get update
 
 # Install necessary packages
 sudo apt-get install -y \
     docker.io \
-    net-tools
+    net-tools \
+    curl
 
 # Add vagrant user to docker group and apply immediately
 sudo usermod -aG docker vagrant && newgrp docker
@@ -31,6 +35,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # Test docker-compose (Important!)
 docker-compose version
+
+# Start Docker service
+sudo systemctl start docker
+sudo systemctl enable docker
 
 # Project Setup
 sudo mkdir -p /srv/www
