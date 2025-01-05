@@ -26,6 +26,10 @@ sudo apt-get install -y \
 # Add vagrant user to docker group and apply immediately
 sudo usermod -aG docker vagrant && newgrp docker
 
+# Start Docker service
+sudo systemctl start docker
+sudo systemctl enable docker
+
 # Verify docker is installed
 docker --version
 
@@ -35,10 +39,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # Test docker-compose (Important!)
 docker-compose version
-
-# Start Docker service
-sudo systemctl start docker
-sudo systemctl enable docker
 
 # Project Setup
 sudo mkdir -p /srv/www
